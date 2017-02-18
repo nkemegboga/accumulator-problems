@@ -3,16 +3,16 @@
 SAMPLE
 ----------------------------------------
 
-Challenge: Write function named test that returns the string "This Works!". 
-Solution: This one has already been complete for you. 
+Challenge: Write function named test that returns the string "This Works!".
+Solution: This one has already been complete for you.
 
 */
 
 function test() {
- var string ="This Works!";
- return string;
+    var string = "This Works!";
+    return string;
 }
-
+console.log("1:", test())
 
 
 /*
@@ -24,12 +24,16 @@ Write function named sum that will take an array of numbers and return the sum o
 
 Example: if you pass it [1,2,3] then it should return 6 (which is 1 + 2 + 3)
 */
+var input_array = [1, 2, 3];
 
-
-
-
-
-
+function sum(array) {
+    var sum = 0;
+    for (i = 0; i < array.length; i++) {
+        sum += array[i];
+    }
+    return sum
+}
+console.log("2:", sum(input_array))
 
 
 
@@ -42,14 +46,16 @@ Write function named doubleNumbers that will take an array of numbers and return
 
 Example: if you pass it [1,2,3] then it should return [2,4,6]
 */
+var input_array = [1, 2, 3];
 
-
-
-
-
-
-
-
+function doubleNumbers(array) {
+    var result = [];
+    for (i = 0; i < array.length; i++) {
+        result[i] = 2 * array[i];
+    }
+    return result
+}
+console.log("3:", doubleNumbers(input_array))
 
 /*
 ----------------------------------------
@@ -65,13 +71,16 @@ Examples:
 - if you call multiplyNumbers([1,2,3], 5) you'd get [5,10,15]
 */
 
+var input_array = [1, 2, 3];
 
-
-
-
-
-
-
+function multiplyNumbers(array, num) {
+    var result = [];
+    for (i = 0; i < array.length; i++) {
+        result[i] = num * array[i];
+    }
+    return result
+}
+console.log("4:", multiplyNumbers(input_array, 5))
 
 /*
 ----------------------------------------
@@ -83,14 +92,16 @@ Write function named doubleLetters that will take a string and double every lett
 Example: if you pass it "abc" then it should return "aabbcc"
 */
 
+var input_string = "abc";
 
-
-
-
-
-
-
-
+function doubleLetters(string) {
+    var result = "";
+    for (i = 0; i < string.length; i++) {
+        result = result + string[i] + string[i];
+    }
+    return result
+}
+console.log("5:", doubleLetters(input_string))
 
 /*
 ----------------------------------------
@@ -104,13 +115,18 @@ Example: if you pass it ["a", "b", "c"] and ["d", "e", "f"] then it should retur
 NOTE: you can assume each input will be the same length
 */
 
+var input_array1 = ["a","b","c"];
+var input_array2 = ["d","e","f"];
 
-
-
-
-
-
-
+function interleave(input_array1, input_array2) {
+    var result = [];
+    for (i = 0; i < input_array1.length; i++) {
+        result.push(input_array1[i])
+        result.push(input_array2[i])
+    }
+    return result
+}
+console.log("6:",interleave(input_array1, input_array2))
 
 
 
@@ -124,11 +140,14 @@ Write function named createRange that will take a number and a default value and
 Example: if you pass it 4 and "Hello" then it should return ["Hello", "Hello", "Hello", "Hello"]
 */
 
-
-
-
-
-
+function createRange(num,input) {
+    var result = [];
+    for (i = 0; i < num; i++) {
+        result.push(input)
+    }
+    return result
+}
+console.log("7:",createRange(4, "Hello"))
 
 
 /*
@@ -143,12 +162,16 @@ Example:
 If you pass it ["quick", "brown", "fox"] then it should return { "quick": 0, "brown": 1, "fox": 2 }
 */
 
+var input_array = ["quick", "brown", "fox"];
 
-
-
-
-
-
+function flipArray(input_array) {
+    var result = new Object();
+    for (i = 0; i < input_array.length; i++) {
+        result[input_array[i]] = i;
+    }
+    return result
+}
+console.log("8:",flipArray(input_array))
 
 /*
 ----------------------------------------
@@ -163,13 +186,16 @@ If you pass it [[2014, "Horse"], [2015, "Sheep"]] then it should return { 2014: 
 
 */
 
+var input_array = [[2014, "Horse"], [2015, "Sheep"]];
 
-
-
-
-
-
-
+function arraysToObject(input_array) {
+    var result = new Object();
+    for (i = 0; i < input_array.length; i++) {
+        result[input_array[i][0]] = input_array[i][1];
+    }
+    return result
+}
+console.log("9:",arraysToObject(input_array))
 
 /*
 ----------------------------------------
@@ -183,16 +209,16 @@ Example:
 If you pass it "hello" then it should return "olleh"
 */
 
+var input_string = "hello"
 
-
-
-
-
-
-
-
-
-
+function reverseString(input_string) {
+    var result = "";
+    for (i = input_string.length - 1; i >= 0; i--) {
+        result = result + input_string[i]
+    }
+    return result
+}
+console.log("10:",reverseString(input_string))
 
 /*
 ----------------------------------------
@@ -208,12 +234,19 @@ If you pass it "yay" then it should return false because it's odd
 If you pass it "heehaw" then it should return false because "hee" doesn't equal "haw"
 */
 
+var input_string = "haha";
 
-
-
-
-
-
+function repeats(input_string) {
+    var result = true;
+    var array1 = "";
+    var array2 = "";
+    if (input_string.length%2 == 1){result = false;}
+    else {var array1 = input_string.slice(0,input_string.length/2);
+    var array2 = input_string.slice((input_string.length/2),input_string.length);}
+    if (array1 !== array2){result = false;}
+    return result
+}
+console.log("11:",repeats(input_string))
 
 /*
 ----------------------------------------
@@ -227,12 +260,13 @@ Example:
 If you pass it "abcdef" then it should return "ace" because those represent every other letter
 */
 
+function everyOther(input_string){
+  var result = "";
+  for (i = 0; i < input_string.length; i+=2){result = result + input_string[i]}
+  return result
+}
 
-
-
-
-
-
+console.log("12:",everyOther("abcdef"))
 
 /*
 ----------------------------------------
@@ -247,12 +281,16 @@ If you pass "aaa" it should return true
 If you pass "aba" it should return false
 */
 
-
-
-
-
-
-
+function allEqual(input_string){
+  var result = true;
+  for (i = 1; i < input_string.length; i++){
+    if (input_string[i] != input_string[i-1]){
+      return false
+    }
+  }
+  return result
+}
+console.log("13:",allEqual("aba"))
 
 /*
 ----------------------------------------
@@ -267,13 +305,14 @@ If you pass "45" it should return 9
 If you pass "246" it should return 10
 */
 
-
-
-
-
-
-
-
+function sumLetters(input_string){
+  sumLets = 0;
+  for (i = 0; i < input_string.length; i++){
+    sumLets += Number(input_string[i]);
+  }
+  return sumLets
+}
+console.log("14:",sumLetters("485"))
 /*
 ----------------------------------------
 CHALLENGE
@@ -286,14 +325,15 @@ Example:
 If you pass "you" it should return 2
 */
 
-
-
-
-
-
-
-
-
+function countVowels(input_string){
+  sumVowels = 0;
+  for (i = 0; i < input_string.length; i++){
+    if (input_string[i] == "a" || input_string[i] == "e" || input_string[i] == "i" || input_string[i] == "o" || input_string[i] == "u")
+    {sumVowels += 1}
+  }
+  return sumVowels
+}
+console.log("15:",countVowels("you"))
 
 /*
 ----------------------------------------
@@ -309,12 +349,14 @@ If you pass "you" it should return ["y", "o", "u"]
 NOTE: do not use the builtin `split` method
 */
 
-
-
-
-
-
-
+function split(input_string){
+  array = [];
+  for (i = 0; i < input_string.length; i++){
+    array.push(input_string[i])
+  }
+  return array
+}
+console.log("16:",split("you"))
 
 /*
 ----------------------------------------
@@ -330,12 +372,14 @@ Example:
 If you pass "Hello" it should return [ 72, 101, 108, 108, 111 ]
 */
 
-
-
-
-
-
-
+function getCodePoints(input_string){
+  array = [];
+  for (i = 0; i < input_string.length; i++){
+    array.push(input_string.codePointAt(i))
+  }
+  return array
+}
+console.log("17:",getCodePoints("Hello"))
 
 /*
 ----------------------------------------
@@ -350,11 +394,14 @@ If you pass "Yo" it should return {Y: 0, o: 1}
 If you pass "Hello" it should return {H: 0, e: 1, l: 3, o: 4}
 */
 
-
-
-
-
-
+function letterMap(input_string) {
+    var result = new Object();
+    for (i = 0; i < input_string.length; i++) {
+        result[input_string[i]] = i;
+    }
+    return result
+}
+console.log("18:",letterMap("Hello"))
 
 
 /*
@@ -370,13 +417,15 @@ If you pass "Yo" it should return {Y: 1, o: 1}
 If you pass "Hello" it should return {"H": 1, "e": 1, "l": 2, "o": 1}
 */
 
-
-
-
-
-
-
-
+function letterCount(input_string) {
+    var result = new Object();
+    for (i = 0; i < input_string.length; i++) {
+      if (result[input_string[i]] == undefined){result[input_string[i]] = 1;}
+      else {result[input_string[i]] += 1;}
+    }
+    return result
+}
+console.log("19:",letterCount("Hello"))
 
 /*
 ----------------------------------------
@@ -391,14 +440,15 @@ If you pass 0,2 it should return false because the only number between 0 and 2 i
 If you pass 0,6 it should return true because between 0 and six (the numbers 1,2,3,4,5) there are three odds - 1, 3 and 5
 */
 
-
-
-
-
-
-
-
-
+function threeOdds(num1,num2){
+  var result = false;
+  if (num2>num1 && num1&2 == 1 && num2 - num1 >= 7){result = true;}
+  else if (num1>num2 && num2%2 == 1 && num1 - num2 >= 7){result = true;}
+  else if (num2>num1 && num1%2 == 0 && num2 - num1 >= 6){result = true;}
+  else if (num1>num2 && num2%2 == 0 && num1 - num2 >= 6){result = true;}
+  return result
+}
+console.log("20:", threeOdds(0,6))
 
 /*
 ----------------------------------------
@@ -412,13 +462,13 @@ Example:
 If you pass "a", 3, "*" it should return "**a" - that is, a string of length 3, padded on the left by the "*" character
 */
 
-
-
-
-
-
-
-
+function leftPad(string, length, fillCharacter){
+  for(i = 0; i < length; i++){
+    if (string.length < length){string = fillCharacter + string}
+  }
+  return string
+}
+console.log("21:",leftPad("a", 3, "*"))
 /*
 ----------------------------------------
 CHALLENGE
@@ -432,12 +482,14 @@ If you pass "a", 3 it should return "aaa"
 If you pass "b", 3 it should return "bb"
 */
 
-
-
-
-
-
-
+function createString(number, letter){
+  string = ""
+  for(i = 0; i < number; i++){
+    if (string.length < number){string = letter + string}
+  }
+  return string
+}
+console.log("22:",createString(3, 'a'))
 
 /*
 ----------------------------------------
@@ -454,13 +506,12 @@ If you pass 4 it should return 24 since that's 4 * 3 * 2 * 1
 If you pass 5 it should return 120 since that's 5 * 4 * 3 * 2 * 1
 */
 
-
-
-
-
-
-
-
+function factorial(number){
+  result = 1
+  for (i = 1; i <= number; i++){result = result *i}
+  return result
+}
+console.log("23:",factorial(4))
 /*
 ----------------------------------------
 CHALLENGE
@@ -474,12 +525,12 @@ If you pass 1 it should return [1]
 If you pass 3 it should return [1,2,3]
 */
 
-
-
-
-
-
-
+function arrayOfNumbers(number){
+  result = []
+  for (i = 1; i <= number; i++){result.push(i)}
+  return result
+}
+console.log("24:", arrayOfNumbers(3))
 
 /*
 ----------------------------------------
@@ -493,13 +544,17 @@ Example:
 If you pass 1,4 it should return {"1": "odd", "2": "even", "3": "odd", "4": "even"}
 */
 
-
-
-
-
-
-
-
+function evenOdd(number1,number2){
+  var result = new Object()
+  for (i = number1; i<= number2; i++){
+    if (number1 > 0 || number2 > 0){
+    if (i%2 == 0){result[i] = "even"}
+    else if (i%2 == 1){result[i] = "odd"}
+  }
+  }
+  return result
+}
+console.log("25:", evenOdd(0,0))
 
 /*
 ----------------------------------------
@@ -513,14 +568,16 @@ Example:
 If you pass 2,"d" it should return {"d": true, "dd": true}
 */
 
-
-
-
-
-
-
-
-
+function growingKeys(number, string){
+  var result = new Object()
+  var attach = ""
+  for (i = 1; i <= number; i++){
+    attach = attach+string
+    result[attach] = true
+  }
+  return result
+}
+console.log("26:", growingKeys(3,"d"))
 
 /*
 ----------------------------------------
@@ -535,12 +592,14 @@ If you pass [1,1], 1 it should return true
 If you pass [1,2], 1 it should return false
 */
 
-
-
-
-
-
-
+function every(array, number){
+  result = true
+  for (i = 0; i < array.length; i++){
+    if (array[i] != number){return false}
+  }
+  return result
+}
+console.log("27:", every([1,1], 1))
 
 /*
 ----------------------------------------
@@ -555,12 +614,14 @@ If you pass [1,2], 1 it should return true
 If you pass [3,2], 1 it should return false
 */
 
-
-
-
-
-
-
+function some(array, number){
+  result = false
+  for (i = 0; i < array.length; i++){
+    if (array[i] == number){return true}
+  }
+  return result
+}
+console.log("28:", some([3,2], 1))
 
 /*
 ----------------------------------------
@@ -575,16 +636,17 @@ If you pass ["Sue", "Will"] it should return "Sue and Will"
 If you pass ["Sue", "Will", "Rachel"] it should return "Sue, Will and Rachel"
 */
 
-
-
-
-
-
-
-
-
-
-
+function toSentence(array){
+  var string = ""
+  for (i = 0; i<array.length-2; i++){
+    if (array.length>2){string = string+array[i]+", "}
+    else {string = string + array[i]}
+  }
+  if (array.length > 0)
+  {string = string + array[array.length-2]+" and "+array[array.length-1]}
+  return string
+}
+console.log("29:",toSentence(["Sue", "Will"]))
 
 
 /*
@@ -597,15 +659,15 @@ Write a function named acronym that takes an array and returns a string that is 
 Example:
 
 If you pass ["Sue", "Will"] it should return "SW"
-If you pass ["Java", Script", "Object", "Notation"] it should return "JSON"
+If you pass ["Java", "Script", "Object", "Notation"] it should return "JSON"
 */
 
-
-
-
-
-
-
+function acronym(array){
+  var string = ""
+  for (i = 0; i<array.length; i++){string = string + array[i][0]}
+  return string
+}
+console.log("30:", acronym(["Java", "Script", "Object", "Notation"] ))
 
 /*
 ----------------------------------------
@@ -619,15 +681,15 @@ Example:
 If you pass [0,-3,2,5] it should return -3
 */
 
-
-
-
-
-
-
-
-
-
+function min(array){
+  var minimum
+  if (array.length > 0){minimum = array[0]}
+  for (i = 1; i<array.length; i++){
+    if (array[i-1] > array[i]){minimum = array[i]}
+  }
+  return minimum
+}
+console.log("31:", min([]))
 
 /*
 ----------------------------------------
@@ -642,12 +704,13 @@ If you pass [{id: 1, name: "Joe"}, {id: 2, name: "Sue"}] it should return {1: {i
 
 */
 
-
-
-
-
-
-
+function index(array, propertyName){
+  var result = new Object()
+  for (i = 0; i<array.length; i++){result[array[i][propertyName]] = array[i]}
+  return result
+}
+array = [{id: 1, name: "Joe"}, {id: 2, name: "Sue"}]
+console.log("32:", index(array, "id" ))
 
 /*
 ----------------------------------------
@@ -661,12 +724,12 @@ Example:
 If you pass {id: 1, name: "Joe"} it should return {1: "id", Joe: "name"}
 */
 
-
-
-
-
-
-
+function invert(object){
+  result = new Object()
+  for (var key in object){result[object[key]] = key}
+  return result
+}
+console.log('33:', invert({id: 1, name: "Joe"}))
 
 /*
 ----------------------------------------
@@ -683,12 +746,12 @@ Example:
 If you pass {"contract": "foo"}, "Fred" it should return {"contract-signed": "foo - Fred"}
 */
 
-
-
-
-
-
-
+function addSignature(name,object){
+  var result = new Object()
+  for (var key in object){result[key+"-signed"] = object[key]+" - "+name}
+  return result
+}
+console.log("34:", addSignature( "Fred",{"contract": "foo"}))
 
 /*
 ----------------------------------------
@@ -702,12 +765,12 @@ Example:
 If you pass {name: "Will", age: 24} it should return ["name - will", "age - 24"]
 */
 
-
-
-
-
-
-
+function pairs(object){
+  var result = []
+  for (var key in object){result.push(key + ' - '+object[key])}
+  return result
+}
+console.log("35:", pairs({name: "Will", age: 24}))
 
 /*
 ----------------------------------------
@@ -721,12 +784,12 @@ Example:
 If you pass {a: 1, b: 2} it should return 3
 */
 
-
-
-
-
-
-
+function sumValues(object){
+  var sum = 0
+  for (key in object){sum = sum + object[key]}
+  return sum
+}
+console.log("36:", sumValues({a: 1, b: 2}))
 
 /*
 ----------------------------------------
@@ -740,17 +803,23 @@ Example:
 If you pass {1999: 4036, 2000: 7654} it should return '2000'
 */
 
-
-
-
-
-
-
-
-
-
-
-
+function biggestProperty(object){
+  var maximum
+  var array1 = []
+  var array2 = []
+  for (var key in object){
+    array1.push(key)
+    array2.push(object[key])
+  }
+  maximum_index = 0
+  for (i = 1; i<array2.length; i++){
+    if (array2[i]>array2[maximum_index]){
+      maximum_index = i
+      maximum = array1[i]}
+  }
+  return maximum
+}
+console.log("37:", biggestProperty({1999: 4036, 2000: 7654}))
 
 
 /*
@@ -765,14 +834,16 @@ Example:
 If you pass {1999: 4036, 2000: 7654} and 4036, it should return '1999'
 */
 
-
-
-
-
-
-
-
-
+function keyForValue(object, value){
+  var result
+  for (key in object){
+    if (object[key] == value){
+      result = key
+      return result}
+  }
+  return result
+}
+console.log("38:", keyForValue({1999: 4036, 2000: 7654}, 4036))
 
 /*
 ----------------------------------------
@@ -786,12 +857,15 @@ Example:
 If you pass {1999: 4036, 2000: 7654} and 4036, it should return true
 */
 
+function containsValue(object, value){
+  result = false
+  for (key in object){
+    if (object[key] == value){
+      return true}
+  }
+  return result
+}
+console.log("39:", containsValue({1999: 4036, 2000: 7654}, 4036))
 
-
-
-
-
-
-
-
-// 
+//
+console.log("Out of 39 problems")

@@ -1,7 +1,7 @@
 window.onload = function() {
   var expect = chai.expect;
   mocha.setup('bdd');
-  
+
   describe('test', function() {
 
     it("string set properly", function() {
@@ -9,7 +9,7 @@ window.onload = function() {
     })
 
   })
-  
+
 
   describe('sum', function() {
 
@@ -52,7 +52,7 @@ window.onload = function() {
     })
 
   })
-
+ // nzx  
   describe('multiplyNumbers', function() {
 
     it("returns 0 when the input is empty", function() {
